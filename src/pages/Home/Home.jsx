@@ -8,11 +8,19 @@ const Home = () => {
     <div>
       <span className="text-2xl font-bold">{count}</span>
       <div className="space-x-2 mt-6">
-        <button onClick={() => dispatch(increment())} aria-label="Increment value">
+        <button
+          onClick={() => dispatch(increment())}
+          aria-label="Increment value"
+        >
           Increment
         </button>
 
-        <button onClick={() => dispatch(decrement())} aria-label="Decrement value">
+        <button
+          disabled={count === 0}
+          onClick={() => dispatch(decrement())}
+          aria-label="Decrement value"
+          className="disabled:opacity-50 disabled:cursor-not-allowed"
+        >
           Decrement
         </button>
       </div>
